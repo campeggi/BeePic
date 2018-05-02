@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>datetime format help</title></head><body>
+
+
+
+
+
+<p><span style="font-weight: bold;">Datetime format</span><br>
+<br>
+This plugin use <small><font face="Courier New, monospace"><font style="font-size: 11pt;" size="2"><small>datetime.strptime(datetime_string,
+format_string)</small></font></font></small>to convert a text string in a datetime value according a specified format.<br>
+The default datetime formats are:<br>
+%Y-%m-%d %H:%M:%S (es: 2013-03-07 10:29:15) for datetime in georeferenced point<br>
+%Y:%m:%d %H:%M:%S (es: 2013:03:07 10:29:15) for image datetime in exif data<br>
+<br>
+The full set of format codes supported varies across platforms, because Python
+calls the platform C library&#8217;s <tt class="xref py py-func docutils literal"><span class="pre">strftime()</span></tt> function, and platform
+variations are common.<br>
+<br>
+The exact range of years for which <tt class="xref py py-meth docutils literal"><span class="pre">strftime()</span></tt> works also varies across
+platforms.  Regardless of platform, years before 1900 cannot be used.<br>
+<br>
+The following is a list of all the format codes that the C standard (1989
+version) requires, and these work on all platforms with a standard C
+implementation.  Note that the 1999 version of the C standard added additional
+format codes.<br>
+<br>
+</p>
+
+
+<table style="text-align: left; width: 390px;" border="1" cellpadding="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 37px; text-align: center; font-weight: bold;">Code</td>
+      <td style="vertical-align: top; width: 298px; text-align: center; font-weight: bold;">Meaning</td>
+      <td style="vertical-align: top; width: 41px; text-align: center; font-weight: bold;">Notes</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 37px;"><tt class="docutils literal"><span class="pre">%a</span></tt></td>
+      <td style="vertical-align: top; width: 298px;">Locale&#8217;s abbreviated weekday
+name.</td>
+      <td style="vertical-align: top; width: 41px;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 37px;"><tt class="docutils literal"><span class="pre">%A</span></tt></td>
+      <td style="vertical-align: top; width: 298px;">Locale&#8217;s full weekday name.</td>
+      <td style="vertical-align: top; width: 41px;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 37px;"><tt class="docutils literal"><span class="pre">%b</span></tt></td>
+      <td style="vertical-align: top; width: 298px;">Locale&#8217;s abbreviated month
+name.</td>
+      <td style="vertical-align: top; width: 41px;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 37px;"><tt class="docutils literal"><span class="pre">%B</span></tt></td>
+      <td style="vertical-align: top; width: 298px;">Locale&#8217;s full month name.</td>
+      <td style="vertical-align: top; width: 41px;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 37px;"><tt class="docutils literal"><span class="pre">%c</span></tt></td>
+      <td style="vertical-align: top; width: 298px;">Locale&#8217;s appropriate date and
+time representation.</td>
+      <td style="vertical-align: top; width: 41px;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%d</span></tt></td>
+      <td style="vertical-align: top;">Day of the month as a decimal
+number [01,31].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%f</span></tt></td>
+      <td style="vertical-align: top;">Microsecond as a decimal
+number [0,999999], zero-padded
+on the left</td>
+      <td style="vertical-align: top;">(1)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%H</span></tt></td>
+      <td style="vertical-align: top;">Hour (24-hour clock) as a
+decimal number [00,23].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%I</span></tt></td>
+      <td style="vertical-align: top;">Hour (12-hour clock) as a
+decimal number [01,12].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%j</span></tt></td>
+      <td style="vertical-align: top;">Day of the year as a decimal
+number [001,366].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%m</span></tt></td>
+      <td style="vertical-align: top;">Month as a decimal number
+[01,12].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%M</span></tt></td>
+      <td style="vertical-align: top;">Minute as a decimal number
+[00,59].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%p</span></tt></td>
+      <td style="vertical-align: top;">Locale&#8217;s equivalent of either
+AM or PM.</td>
+      <td style="vertical-align: top;">(2)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%S</span></tt></td>
+      <td style="vertical-align: top;">Second as a decimal number
+[00,61].</td>
+      <td style="vertical-align: top;">(3)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%U</span></tt></td>
+      <td style="vertical-align: top;">Week number of the year
+(Sunday as the first day of
+the week) as a decimal number
+[00,53].  All days in a new
+year preceding the first
+Sunday are considered to be in
+week 0.</td>
+      <td style="vertical-align: top;">(4)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%w</span></tt></td>
+      <td style="vertical-align: top;">Weekday as a decimal number
+[0(Sunday),6].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%W</span></tt></td>
+      <td style="vertical-align: top;">Week number of the year
+(Monday as the first day of
+the week) as a decimal number
+[00,53].  All days in a new
+year preceding the first
+Monday are considered to be in
+week 0.</td>
+      <td style="vertical-align: top;">(4)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%x</span></tt></td>
+      <td style="vertical-align: top;">Locale&#8217;s appropriate date
+representation.</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%X</span></tt></td>
+      <td style="vertical-align: top;">Locale&#8217;s appropriate time
+representation.</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%y</span></tt></td>
+      <td style="vertical-align: top;">Year without century as a
+decimal number [00,99].</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%Y</span></tt></td>
+      <td style="vertical-align: top;">Year with century as a decimal
+number.</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%z</span></tt></td>
+      <td style="vertical-align: top;">UTC offset in the form +HHMM
+or -HHMM (empty string if the
+the object is naive).</td>
+      <td style="vertical-align: top;">(5)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%Z</span></tt></td>
+      <td style="vertical-align: top;">Time zone name (empty string
+if the object is naive).</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><tt class="docutils literal"><span class="pre">%%</span></tt></td>
+      <td style="vertical-align: top;">A literal <tt class="docutils literal"><span class="pre">'%'</span></tt> character.</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<tt class="docutils literal"><span class="pre"></span></tt><br>
+Notes:
+
+<ol class="arabic simple">
+<li>When used with the <tt class="xref py py-meth docutils literal"><span class="pre">strptime()</span></tt> method, the <tt class="docutils literal"><span class="pre">%f</span></tt> directive
+accepts from one to six digits and zero pads on the right.  <tt class="docutils literal"><span class="pre">%f</span></tt> is
+an extension to the set of format characters in the C standard (but
+implemented separately in datetime objects, and therefore always
+available).</li><li>When used with the <tt class="xref py py-meth docutils literal"><span class="pre">strptime()</span></tt> method, the <tt class="docutils literal"><span class="pre">%p</span></tt> directive only affects
+the output hour field if the <tt class="docutils literal"><span class="pre">%I</span></tt> directive is used to parse the hour.</li><li>The range really is <tt class="docutils literal"><span class="pre">0</span></tt> to <tt class="docutils literal"><span class="pre">61</span></tt>; according to the Posix standard this
+accounts for leap seconds and the (very rare) double leap seconds.
+The <span class="reference internal"><tt class="xref py py-mod docutils literal"><span class="pre">time</span></tt></span> module may produce and does accept leap seconds since
+it is based on the Posix standard, but the <span class="reference internal"><tt class="xref py py-mod docutils literal"><span class="pre">datetime</span></tt></span> module
+does not accept leap seconds in <tt class="xref py py-meth docutils literal"><span class="pre">strptime()</span></tt> input nor will it
+produce them in <tt class="xref py py-func docutils literal"><span class="pre">strftime()</span></tt> output.</li><li>When used with the <tt class="xref py py-meth docutils literal"><span class="pre">strptime()</span></tt> method, <tt class="docutils literal"><span class="pre">%U</span></tt> and <tt class="docutils literal"><span class="pre">%W</span></tt> are only used in
+calculations when the day of the week and the year are specified.</li><li>For example, if <tt class="xref py py-meth docutils literal"><span class="pre">utcoffset()</span></tt> returns <tt class="docutils literal"><span class="pre">timedelta(hours=-3,</span> <span class="pre">minutes=-30)</span></tt>,
+<tt class="docutils literal"><span class="pre">%z</span></tt> is replaced with the string <tt class="docutils literal"><span class="pre">'-0330'</span></tt>.</li>
+</ol>
+
+  
+
+</body></html>

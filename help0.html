@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Geolocate photos - help</title></head><body>
+
+
+
+
+
+
+
+
+<p style="margin-bottom: 0cm; font-style: normal; font-weight: normal;"><big style="font-weight: bold;">
+Geolocate photos by time</big> (ver. 0.1 - experimental)<b><br>
+<br>
+<br>
+Aim</b><b>:</b>
+geo-locate photos according to shooting time<b><br>
+<br>
+Requirements</b><b>:</b><br>
+- EXIF data with shooting
+time in the image files<br>
+- a layer of reference
+points with date-time attributes (GPS track-points)<b><br>
+<br>
+Output:</b>
+a layer of points showing the position each photo was taken<b><br>
+<br>
+Description:</b><br>
+This plugin locate digital
+photos according to shooting time thanks to the comparison with a
+layer of reference points (usually the points of a GPS track). Image
+files must have EXIF data with the shooting time ('DateTimeOriginal'
+tag) and the reference layer must have a field with date and time of
+acquisition in table of attributes.<br>
+<span lang="en-GB">The plugin reads the shooting time of each photo
+and looks for the reference point with the same time or the two
+points whose date-time contain it; in this last case the plugin
+calculates a proportion between times and positions to locate the
+photo on the right distance in the segment between the two
+points.<br>Often the clock of the digital camera isn't synchronized
+with GPS time; to correct the </span>consequent <span lang="en-GB">error
+you need to insert the delay of the photos over the reference points.
+If this value is unknown you can select a photo taken in a known
+place, show its position on the map and change the delay value until
+the right position is reached.</span></p>
+
+
+  
+
+</body></html>

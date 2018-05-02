@@ -1,0 +1,25 @@
+[general]
+name=BeePic 
+email=Campeggi92@gmail.com 
+author=Campeggi Mattia 
+qgisMinimumVersion=2.0 
+description=geolocate photos by time
+version=1.0
+
+
+
+
+
+
+icon=./plugin.png
+
+tags=photo,shape,vector
+
+homepage=
+tracker=
+repository=
+
+experimental=False
+deprecated=False
+
+
